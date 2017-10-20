@@ -12,8 +12,8 @@ object Dungeon {
     val puff = new Dragon("Puff")
     val thor = new Knight("Thor")
     while (puff.isAlive && thor.isAlive) {
-      thor.attack(puff, random.nextInt)
-      puff.attack(thor, random.nextInt)
+      thor.attack(puff, random)
+      puff.attack(thor, random)
     }
   }
 }
