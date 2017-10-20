@@ -12,11 +12,18 @@ class Character(val name: String, private var health: Int = 100) {
   def damage(amount: Int) = {
     health = math.max(NoMoreHealth, health - amount)
   }
+  def printHealth = {
+    print(s"$name's health: $health")
+  }
+
   def attack(victim: Character, random: Random) = {
     val damageAmount = math.abs(random.nextInt % (health + 1))
-    println(s"$name's health: $health, " +
-      s"${victim.name}'s health: ${victim.health}")
+    print(s" ${-damageAmount}, ")
     victim.damage(damageAmount)
+    victim.printHealth
+    print(", ")
+    this.printHealth
+    println
     if (!victim.isAlive)
       println(s"${victim.name} is dead.")
   }

@@ -9,8 +9,8 @@ class Knight(name: String) extends Character(name) {
 
   def attack(victim: Dragon, random: Random) = {
     if (this.isAlive) {
+      print(s"${this.name} is stabbing ${victim.name}")
       super.attack(victim, random)
-      println(s"${this.name} is stabbing ${victim.name}")
     }
   }
 }

@@ -11,6 +11,10 @@ object Dungeon {
   def main(args: Array[String]): Unit = {
     val puff = new Dragon("Puff")
     val thor = new Knight("Thor")
+    puff.printHealth
+    println
+    thor.printHealth
+    println
     while (puff.isAlive && thor.isAlive) {
       thor.attack(puff, random)
       puff.attack(thor, random)
