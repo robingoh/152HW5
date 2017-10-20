@@ -1,12 +1,19 @@
 package DnD
 
-class Dragon(val name: String, private var health: Int = 100) {
-  def damage(amt: Int) {
-    health = math.max(0, health - amt)
+class Dragon(name: String) extends Character(name) {
+  def attack(victim: Knight, amount: Int) = {
+    println(s"$name is flaming ${victim.name}")
+    victim.damage(amount)
   }
-  def getHealth = health
-  override def toString = name + " (health = " + health + ")"
 }
+
+//class Dragon(val name: String, private var health: Int = 100) {
+//  def damage(amt: Int) {
+//    health = math.max(0, health - amt)
+//  }
+//  def getHealth = health
+//  override def toString = name + " (health = " + health + ")"
+//}
 
 // companion object
 object Dragon {
