@@ -8,8 +8,8 @@ class Description(private val description: String,
                   private val supplier: String) extends Equals {
   override def toString: String =
     s"description: $description, " +
-    s"price: $price, " +
-    s"supplier: $supplier "
+    s"price: $$$price, " +
+    s"supplier: $supplier"
 
   override def hashCode(): Int = this.toString.##
   override def canEqual(that: Any): Boolean = that.isInstanceOf[Description]

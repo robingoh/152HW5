@@ -11,7 +11,7 @@ object WeatherStation extends App {
         .map(celsiusTherm.computeTemp _)
         .reduce((x: Double, y: Double)=> x + y) / cities.size
     // Using .map().sum will be more succinct but problem requires
-    // using .reduce().
+    // using .map().reduce().
   }
   val avgTemp = thermometer.getMeanTemperature(List("LA", "SF", "SLC", "Rio"))
   println(s"avg temp = $avgTemp")

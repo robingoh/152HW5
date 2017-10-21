@@ -15,12 +15,15 @@ class Queue[T](val capacity: Int = 100) {
     val first = elements.remove(0)
     first
   }
-  def isEmpty = {
-    elements.isEmpty
-  }
+  def isEmpty = elements.isEmpty
 
   override def toString: String = {
-    elements.toString
+    var resultString = "("
+    for (e <- elements)
+      resultString += s"$e, "
+    if (resultString.length > 1)
+      resultString = resultString.substring(0, resultString.length-2)
+    resultString.concat(")")
   }
 }
 
